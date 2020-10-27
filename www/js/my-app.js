@@ -144,6 +144,7 @@ for(i=1; i <=6;i++){
 $$("#dado"+i + v).on("click", function(){
   ac1.open();
   console.log("estoy aca");
+  
 });
 
 }
@@ -151,16 +152,19 @@ $$("#dado"+i + v).on("click", function(){
 
 var ac1 = app.actions.create({
   
+  //ACA ESTOY TRABADO , QUIERO OBTENER EL ID DE CADA BOTON PRESIONADO Y ...
   buttons: [
     {
-      text: (this.val.id),
+      text: " ", // YA TENDRIA QUE TENERLO DE ANTEMANO PARA AGREGARLO AL TITULO DE POP-UP SEGUN CORRESPONDA SU ID.
     },
     {
       text: 'Uno',
       onClick: function () {
-        var oID = $(this).attr("id")
+        var arr = document.getElementById(this);
+        // PENSE EN BUSCAR LA POSICION 5 (VENDRIA A SER DE DADO1 EL 1 PARA PODER MULTIPLICARLO POR EL NUMERO DE BOTON PRESIONADO)
+        var ele1= parseInt(arr[5]); //ACA TRATANDO DE OBTENER LA POSICION 5 , PERO NO FUNCIONA.
         totalCuadrante = 1*2;
-        console.log(totalCuadrante, oID);
+        console.log(totalCuadrante, ele1);//ACA SOLO ESTABA PROBANDO SI ele1 me daba el resultado que queria.
       }
 
     },
